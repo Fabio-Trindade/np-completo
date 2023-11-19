@@ -78,8 +78,7 @@ def is_isomorphism(M:list,G1:Graph,G2:Graph):
 
 # OClique = Output Clique; OSI = Output Subgraph Isomorphism
 def OSI_to_OCLique(mapp: dict[int,int]) -> list:
-    return [v for k,v in mapp.items()]
-        
+    return [v for k,v in mapp.items()] if mapp != None else []   
     # return list(mapp.values())
 
 def verificationCLique(G1:Graph, k: int,vertex: list):
@@ -118,7 +117,7 @@ if __name__ == "__main__":
     assert(verificationCLique(G1,3,[0,1,2]) == False)
     # Execução da Redução
     k = 3
-    ## Mapeamento da Entrada
+    # Mapeamento da Entrada
     G1,G2 = ICLique_to_ISI(G1,k)
     print("G1:")
     G1.print()
